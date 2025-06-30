@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, ImageBackground, } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable, ImageBackground,Modal } from 'react-native';
 import { useState } from 'react';
 import GestionListe from './GestionListe';
 
@@ -48,7 +48,10 @@ export default function App() {
           value={text}
           placeholder="Ajoutez un objectif"
         />
-        <Button title="Add" onPress={handleAdd} />
+        
+        <Pressable onPress={() => handleAdd(true)}>
+                <Text style={styles.add}>OK</Text>
+              </Pressable>
       </View>
       </ImageBackground>
     </View>
@@ -61,24 +64,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#fff',
   },
   title: {
-    fontSize: 22,
+    fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 22,
+    textAlign: 'center',
+    marginBottom: 35,
+    color: '#4a2e4e',
   },
-  
   input: {
-  backgroundColor: '#eadbec',
-  borderColor: '#ccc',
-  borderWidth: 3,
-  padding: 8,
-  borderRadius: 2,
+    flex: 1,
+    backgroundColor: '#eadbec',
+    borderColor: '#4a2e4e',
+    borderWidth: 2,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    fontSize: 16,
+    marginRight: 8,
+  },
+add: {
+  backgroundColor: '#4a2e4e',
+  color: 'white',
+  padding: 10,
+  borderRadius: 5,
+  marginLeft: 10,
 },
 Ajouter: {
   flexDirection: 'row',  
-  marginBottom: 14,
+  marginBottom: 2,
+  width: 300,
 },
 image: {
     flex: 1,
