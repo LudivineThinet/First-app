@@ -3,7 +3,7 @@ import GestionItem from './GestionItem';
 
 const GestionListe = ({ goals, handleDelete, }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={goals}
         keyExtractor={(item, index) => index.toString()}
@@ -16,6 +16,15 @@ const GestionListe = ({ goals, handleDelete, }) => {
   );
 }
 
+const styles = StyleSheet.create({
+
+container : {
+  height: '80%',
+
+}
+
+
+})
 
 
 
